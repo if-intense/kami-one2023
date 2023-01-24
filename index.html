@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="カミワン, カミワン グランプリ, kami-1, kami1, カミスマ, 美容師コンテスト, KAMI-1 Grand Prix, ">
+  <meta name="description" content="理美容業界初の映像コンテスト！向上心を持つ理美容師の方々の夢を叶えるイベントです。‘動画’をテーマにしたステージを用意し、次世代の理美容師に活躍の場を提供します。">
+  <title>「KAMI-1 Grand Prix」| カミワン グランプリ ゼロ</title>
+  <link rel="icon" href="assets/images/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/confetti.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet"> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Oswald:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    
+</head>
+
+
+<script>
+  $(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y >6600) {
+      $('.register').fadeOut();
+    } else {
+      $('.register').fadeIn();
+    }
+  });
+</script>
+
+<script>
+  $(window).scroll(function () {
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 500);
+  });
+</script>
+
+
+
+<body>
+  <div class="register">
+    <a href="https://one.kamisma.com">エントリーはこちら</a>
+    <!-- <p>2022年8月31日（水）まで</p> -->
+  </div>
+  <!-- <div class="alert-message">
+
+    <div class="news-alert bottom">
+      <a data-bs-toggle="modal" data-bs-target="#news2">決勝戦進出者発表</a>
+    </div>
+    <div class="news-alert top">
+      <a data-bs-toggle="modal" data-bs-target="#news">２回戦進出者発表</a>
+    </div>
+  
+   
+  
+  </div> -->
+
+<!-- Modal -->
+<div class="modal fade" id="news" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">お知らせ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body message" id="app">
+        <div class="title">
+          <h4><strong>KAMI-1 グランプリ ZERO</strong><br>2回戦進出者（チーム） </h4>
+        </div>
+        <ul class="entrants">
+          <li v-for="stylist in stylists">{{stylist.name}} <span v-if="stylist.team === true">※</span></li>
+        </ul>
+        <p>〈氏名五十音順〉
+          <br>※はチームエントリーの方々です。</p>
+        <div class="short-message">
+          <p>多数のご応募、素晴らしい作品をありがとうございました。<br>
+            一次審査結果は２回戦進出者の発表をもってかえさせていただきます。<br>
+            また、決勝進出者の方には個別にご連絡させていただきます。</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn close-modal" data-bs-dismiss="modal">閉じる</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="news2" tabindex="-1" aria-labelledby="news2modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="news2modal"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body message" id="list">
+        <div class="title">
+          <h4><strong>KAMI-1 グランプリ ZERO</strong><br>決勝戦進出者（個人&チーム）</h4>
+        </div>
+
+          <div id="list">
+            <ul class="entrants">
+              <li v-for="stylist in stylists">{{stylist.name}} <span v-if="stylist.team === true">※</span></li>
+            </ul>
+          </div>
+
+          <p>〈氏名五十音順〉<br>
+            ※はチームエントリーの方々です。<br>（チーム代表者名を記載しております）</p>
+
+
+          <div class="short-message">
+            <p>決勝戦エントリー期間が終了しましたので、決勝戦進出者&チームを発表させていただきます。<br>
+              最終審査結果発表会は、2022年12月13日(火)KAMI CHARISMA 2023アワード内にて開催いたします。<br>
+              優勝作品の発表を楽しみにお待ちください。</p>
+          </div>
+         
+
+          
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn close-modal" data-bs-dismiss="modal">閉じる</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="wrapper">
+
+    <nav class="navbar navbar-light bg-kmax fixed-top">
+      <a class="navbar-brand" href="http://kami-1.com/">
+        <img src="assets/images/logo.png" height="50" class="d-inline-block align-top mx-3" alt="">
+        <!-- KAMI-1 グランプリ -->
+      </a>
+    </nav>
+
+    <div class="confetti-box">
+      <div class="container-fluid">
+        <div class="confetti-land">
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <!-- <p>次代の主役を掴め！</p>
+                    <h4>優勝賞金<br>200百万</h4> -->
+          <h1><img src="assets/images/kami-1-2023-2.png" alt="KAMI-1グランプリ　カミワン" class="img-fluid"></h1>
+        </div>
+      </div>
+
+      <div class="main-title text-center">
+        <!-- <h4>次代の主役をつかめ！</h4> -->
+        <!-- <h5><span>賞金200万</span></h5> -->
+        <h2 class="top">理美容業界初、映像コンテスト始動!!</h2>
+        <h3>2023.12.12<span>TUES</span></h3>
+        <h2><strong>KAMI CHARISMA 2024 AWARD</strong><br>
+          <span>にて優勝者を発表！<br><em>決勝進出者の方は<br>AWARDにご招待します。</em></span>
+        </h2>
+      </div>
+      <section class="sect01 anchor entry">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+          <!-- <h5 class="px-4">※<strong>エントリーを締め切りました。</strong><br>通信環境等のトラブルでエントリーに不備がありましたら、別途ご相談ください。
+          <br><a href="mailto:info@kami-1.com">info@kami-1.com</a>
+          </h5> -->
+          <div class="dark">
+            <p class="text-center">エントリー締切</p>
+            <p class="text-center">2023年6月30日(金) 23時59分</p>
+            <div id="timer"></div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- <div class="news">
+     <div class="container">
+      <div class="col-lg-10 offset-lg-1 px-3">
+
+        <h6>理美容室各位</h6>
+        <p>&nbsp;</p>
+
+        <h3>一部システム障害に関するお詫びと<br class="br_on">それに伴うエントリー期間変更のお知らせ</h3>
+
+
+
+
+      <p>この度、KAMI-1グランプリ ZEROの公式エントリーサイトにおいて、8月17日 18:00〜19:00の間アクセス集中によるサーバー負荷の影響により、10分程度のシステム障害が発生いたしました。</p>
+      
+      <p>一時的にサイトにアクセスできない状況が発生しておりましたが、既に対策を行い現在は復旧しております。ご不便、ご迷惑をおかけしたことを深くお詫び申し上げます。</p>
+      
+      <p>これに伴い、 <strong>8月20日土曜日</strong> で締切となっておりますエントリー期間を、 <strong>8月31日水曜日</strong> に変更させて頂くことになりました。</p>
+      
+      <p>つきましては、アクセスの集中を避けるために映像が完成した時点で、応募締め切り日を待たずにエントリーして頂きますようお願い申し上げます。</p>
+      
+      <p>今後、同様の事象が発生いたしません様、再発防止に努めてまいります。<br>
+        皆様にご不便・ご迷惑をおかけしたことを、心より深くお詫び申し上げます。</p>
+      </div>
+     </div>
+    </div> -->
+
+
+    <div class="main">
+      <section class="sect02 anchor" id="no1">
+        <div class="container">
+          <ul class="inner-nav">
+            <!-- <li>1. 大会概要</li>
+                        <li>2. 出場資格</li>
+                        <li>3. エントリー</li>
+                        <li>4. 応募方法</li>
+                        <li>5. 応募要項</li> -->
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+              <div class="row justify-content-center">
+                <div class="col-4 px-0">
+                  <li><a href="#no1"><img src="assets/images/inner-nav1.png" alt="nav1" class="img-fluid"></a></li>
+                </div>
+                <div class="col-4 px-0">
+                  <li><a href="#no2"><img src="assets/images/inner-nav2.png" alt="nav1" class="img-fluid"></a></li>
+                </div>
+                <div class="col-4 px-0">
+                  <li><a href="#no3"><img src="assets/images/inner-nav3.png" alt="nav1" class="img-fluid"></a></li>
+                </div>
+                <div class="col-4 px-0">
+                  <li><a href="#no4"><img src="assets/images/inner-nav4.png" alt="nav1" class="img-fluid"></a></li>
+                </div>
+                <div class="col-4 px-0">
+                  <li><a href="#no5"><img src="assets/images/inner-nav5.png" alt="nav1" class="img-fluid"></a></li>
+                </div>
+              </div>
+            </div>
+          </ul>
+          <div class="col-lg-10 offset-lg-1 my-5 heading">
+            <h2>01 <span>大会概要</span></h2>
+            <h3>ツカミトレ！<br>
+              <span>グランプリ優勝賞金<strong>500</strong>万！</span>
+            </h3>
+            <hr>
+            <p class="body"><span>「有名になりたい」</span><span>「認められたい」</span>など<br class="small-smph-connect">
+              向上心を持つ理美容師の夢を叶えるイベントとして、<br class="small-smph-connect">
+              <span class="title"><ruby>KAMI-1<rt>カミワン</rt></ruby> グランプリ 2023</span> を開催します。<br>
+              個性や強みを魅力的に演出する自己プロデュース力を<br class="small-smph-connect">
+              発揮して頂くために、<span>「動画」をテーマ</span>にした<br class="small-smph-connect">
+              ステージをご用意いたしました。<br>
+              1回戦、2回戦を突破し、見事決勝戦で優勝した参加者には
+              グランプリ獲得を記念して賞を贈呈致します。
+            </p>
+            <div class="col-lg-8 offset-lg-2 col-10 offset-1">
+              <img src="assets/images/kmax-grandprix1.png" alt="KAMI-1グランプリ" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sect03 anchor" id="no2">
+        <div class="container">
+          <div class="col-lg-10 offset-lg-1 qualifications">
+            <h2>02 <span>出場資格</span></h2>
+            <div class="qualification-list">
+              <ul>
+                <li>理美容免許取得者</li>
+                <li>40歳までの方（40歳の方は出場可能）</li>
+              </ul>
+            </div>
+            <hr>
+            <div class="body">
+              <ul>
+                <li>決勝戦進出者の受付時に、理容師免許または美容師免許のコピーをご提出いただきます。</li>
+                <li>2022年12月31日時点での年齢を対象とします。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sect04 anchor" id="no3">
+        <div class="container">
+          <div class="col-lg-10 offset-lg-1 entry">
+            <h2>03 <span>エントリー</span></h2>
+            <div class="entry-qual">
+              <ul>
+                <li>個人 <span>または</span> チーム（2〜4人）</li>
+              </ul>
+              <p></p>
+            </div>
+            <hr>
+            <div class="body">
+              <ul>
+                <li>エントリーは、個人またはチームいずれかをお選びいただけます。</li>
+                <li>チームで参加の場合は、最大4人までとなります。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sect05 anchor" id="no4">
+        <div class="container">
+          <div class="col-lg-10 offset-lg-1 entry">
+            <h2>04 <span>応募方法</span></h2>
+            <div class="steps-to-enter">
+              <h3>エントリー期間<br>
+                開始日：<span>2023</span>年<span>1</span>月<span>1</span>日（日）〜<br>締切日：<span>2022</span>年<span>6</span>月<span>30</span>日<em style="font-style: normal;">（金）</em>
+                
+                </h3>
+                <p>※締切当日23時59分まで有効</p>
+            </div>
+            <hr>
+            <p>専用サイト”KAMISMA ONE”のエントリーフォームよりエントリーしてください。<br>
+              ※当サイト上にエントリーボタンがありますので、そちらをクリックするとエントリーフォームに進みます。<br>
+              （その他の方法では一切受付できかねます。）
+            </p>
+            <div class="steps">
+
+
+              <div class="row row-flex mt-3 mt-5">
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-5">
+                  <div class="content">
+                    <div class="steps-title">
+                      Step 1
+                    </div>
+                    <div class="row mx-0">
+                      <div class="img-area col-lg-12 col-sm-12 col-4">
+                        <img src="assets/images/kami1_steps03.png" class="img-fluid" />
+                      </div>
+                      <div class="text-area col-lg-12 col-sm-12 col-8">
+                        <p><span>大会概要をKAMI-1 グランプリ 2023公式サイトで確認</span><br>（今ご覧いただいている当サイトです）</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-5">
+                  <div class="content">
+                    <div class="steps-title">
+                      Step 2
+                    </div>
+                    <div class="row mx-0">
+                      <div class="img-area col-lg-12 col-sm-12 col-4">
+                        <img src="assets/images/kami1_steps01.png" class="img-fluid" />
+                      </div>
+                      <div class="text-area col-lg-12 col-sm-12 col-8">
+                        <p><span>エントリーフォームに必要事項を記入</span><br>
+                          (「エントリーはこちら」をクリックするとエントリーフォームに進みます）<br>
+                          ※ 使用音源等に関する注意事項がございます。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-5">
+                  <div class="content">
+                    <div class="steps-title">
+                      Step 3
+                    </div>
+                    <div class="row mx-0">
+                      <div class="img-area col-lg-12 col-sm-12 col-4">
+                        <img src="assets/images/kami1_steps04.png" class="img-fluid" />
+                      </div>
+                      <div class="text-area col-lg-12 col-sm-12 col-8">
+                        <p><span>1回戦・2回戦用の映像をエントリーフォーム上でアップロード</span>
+                          <br>
+                          （アップロード後、"エントリー"をクリックすると応募完了となります）
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sect06 anchor" id="no5">
+        <div class="container">
+          <div class="col-lg-10 offset-lg-1 requirements">
+            <h2>05 <span>応募要項</span></h2>
+            <div class="requirement-table">
+              <h3>理美容を通じて次代を創造する映像</h4>
+
+                <div class="requirement col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                  <div class="row req-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>賞金</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>優勝者（個人 <em>または</em> チーム）に 500万円</p>
+                    </div>
+                  </div>
+                  <div class="row req-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>エントリー期間</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        <!-- <strong class="strikethrough">2022年6月21日(火)～8月20日(土）</strong><br> -->
+                        <strong>2023年1月1日(日)～2023年6月30日(金）</strong><br>
+                        <span><strong>*</strong>締切当日23日59分まで有効<br>
+                          <strong>*</strong>期間内の映像修正・再提出可能<br>
+                          <strong>*</strong>重複エントリー不可</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row req-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>大会応募</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        １回戦・２回戦用映像<br>1分以内の動画×2本</p>
+                      <p class="mt-3">
+                        <span class="small"><strong>*</strong>各映像とも１回戦・２回戦用を明記の上、
+                          それぞれの<br class="small-smph-connect">タイトルと簡単なコンセプトの説明を記載して下さい。</span>
+                      </p>
+                      <p class="mt-3">
+                        <span class="small"><strong>*</strong>
+                          使用する楽曲について<br>
+                          以下の著作権フリーサイトからの引用を推奨しています。
+                        </span>
+                      </p>
+                      <ul>
+                        <li>Artlist <span><em>※</em>Creator Pro プラン</span></li>
+                        <li>Epidemic Sound <span><em>※</em>Commercial プラン</span></li>
+                        <li>Audiostock <span><em>※</em>スタンダードプラン</span></li>
+                        <li>DOVA SYNDROME</li>
+                        <li>BGMer</li>
+                      </ul>
+                      <p class="mt-3">
+                        <span class="small"><strong>*</strong>
+                          エントリー後、専用サイト”KAMISMA ONE”の会員登録を行なってください。
+                          マイデータよりエントリーされた映像作品の修正・再提出をすることができます。
+                        </span>
+                      </p>
+                      <p class="mt-3">
+                        <span class="small"><strong>*</strong>下記2つの映像の再生ボタンをクリックしていただくと、サンプル映像をご覧いただけます。</span></p>
+                      <div class="col-lg-10 offset-lg-1 col-8 offset-2 my-4 video-area">
+                        <p>サンプル映像１<br>
+                          <video src="assets/images/video-portrait.mp4" autoplay muted controls></video>
+                      </div>
+                      <div class="col-lg-10 offset-lg-1 col-12 my-4 video-area">
+                        サンプル映像２
+                        <video src="assets/images/video-landscape.mp4" autoplay muted controls></video>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row req-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>決勝戦応募</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        2分以内の動画×1本
+                        <!-- <br>（3分以内を予定していますが、変更の可能性があります） -->
+                        <!-- <span><strong>*</strong>決勝進出者（個人またはチーム）の方に後日詳細をお伝えします。 -->
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="text-center">大会スケジュール</h3>
+                <div class="schedule col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                  <div class="row schedule-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>１回戦・２回戦<br>
+                        （1次審査・2次審査）</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p><strong>【エントリー期間】</strong><br>
+                        2023年1月1日(日)～<strong>2023年6月30日(金)まで</strong>
+                      </p>
+                      <hr style="color:#fff;">
+                      <p><strong>【1次審査・2次審査期間】</strong><br>
+                        2023年7月1日(土)～2023年8月20日(日)<br>
+                        <span>
+                          <strong>*</strong>審査は同時期に続けて行います。
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row schedule-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>決勝戦進出作品の発表</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        <strong> 2023年8月21日(月）</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row schedule-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>決勝戦映像</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        <strong>【エントリー期間】</strong><br>
+                        <strong>2023年8月21日(月)～10月31日(火)</strong><br>
+                        <span><strong>*</strong>締切日23時59分まで有効</span>
+                      </p>
+                      <p>
+                        <strong>【最終審査期間】</strong><br>
+                        <strong>2023年11月1日(水)～</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row schedule-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>最終審査発表</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        <strong>2022年12月12日(火)</strong><br>
+                        <strong>KAMI CHARISMA 2024 AWARD</strong>にて発表<br>
+                        <br>
+                        <span>決勝進出者は、KAMI CHARISMA 2024AWARD内で行われる最終審査結果発表会にご招待します。</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row schedule-row">
+                    <div class="col-lg-4 col-md-4 title py-2 mt-2">
+                      <h4>審査基準</h4>
+                    </div>
+                    <div class="col-lg-8 col-md-8 py-2 px-3 text my-3">
+                      <p>
+                        <span>
+                          <strong>*</strong>理美容を通じて次代を創造する映像<br>（どんな映像でもかまいません。ただし理美容師らしい映像作品でご応募ください）</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="links">
+          <ul>
+            <li><a href="https://kami-1.com/zero/assets/pdf/termsofservice.pdf">利用規約</a></li>
+            
+            <li><a href="https://kami-1.com/zero/assets/pdf/privacypolicy.pdf">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <h1>KAMI-1グランプリ 事務局</h1>
+        <p>Copyright &copy; 2022</p>
+      </div>
+    </footer>
+  </div>
+</body>
+<script>
+  function updateTimer() {
+    future = Date.parse("June 30, 2023 23:59:00");
+    now = new Date();
+    diff = future - now;
+
+
+    days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    hours = Math.floor(diff / (1000 * 60 * 60));
+    mins = Math.floor(diff / (1000 * 60));
+    secs = Math.floor(diff / 1000);
+
+    d = days;
+    h = hours - days * 24;
+    m = mins - hours * 60;
+    s = secs - mins * 60;
+
+    if(days > 0) {
+      document.getElementById("timer")
+      .innerHTML =
+      '<div>' + d + '<span>日</span></div>' +
+      '<div>' + h + '<span>時間</span></div>' +
+      '<div>' + m + '<span>分</span></div>' +
+      '<div>' + s + '<span>秒</span></div>';
+    } else if(days < 0) {
+      document.getElementById("timer")
+      .innerHTML = 
+      '<div>' + 0 + '<span>日</span></div>' +
+      '<div>' + 0 + '<span>時間</span></div>' +
+      '<div>' + 0 + '<span>分</span></div>' +
+      '<div>' + 0 + '<span>秒</span></div>';
+    }
+
+  }
+  setInterval('updateTimer()', 1000);
+
+</script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.4/tsparticles.min.js"></script> -->
+<script>
+  var confettiPlayers = [];
+
+  function makeItConfetti() {
+    var confetti = document.querySelectorAll('.confetti');
+
+    if (!confetti[0].animate) {
+      return false;
+    }
+
+    for (var i = 0, len = confetti.length; i < len; ++i) {
+      var snowball = confetti[i];
+      snowball.innerHTML = '<div class="rotate"><div class="askew"></div></div>';
+      var scale = Math.random() * .8 + .2;
+      var player = snowball.animate([
+        { transform: 'translate3d(' + (i / len * 95) + 'vw,0,0) scale(' + scale + ')', opacity: scale },
+        { transform: 'translate3d(' + (i / len * 50) + 'vw,100vh,0) scale(' + scale + ')', opacity: 1 }
+      ], {
+        duration: Math.random() * 5000 + 5000,
+        iterations: Infinity,
+        delay: -(Math.random() * 5000)
+      });
+
+
+      confettiPlayers.push(player);
+    }
+  }
+
+  makeItConfetti();
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/list.js"></script>
+</html>

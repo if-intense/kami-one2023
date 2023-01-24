@@ -1,0 +1,994 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.br_on {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+.header {
+  width: 100%;
+  max-width: 720px;
+  overflow-x: scroll;
+}
+.header dl {
+  display: inline-block;
+  width: 19%;
+  margin: 0;
+  text-align: center;
+}
+.header dt {
+  padding: 10px 0;
+  background-color: #5c87a6;
+  font-size: 12px;
+  color: #ffffff;
+}
+.header dd {
+  padding: 10px 20px;
+  margin-left: 0;
+  background-color: #f1f1f1;
+  font-size: 10px;
+}
+
+.list {
+  width: 100%;
+  max-width: 720px;
+  overflow-x: scroll;
+}
+.list dl {
+  display: inline-block;
+  width: 19%;
+  margin: 2px auto;
+  text-align: center;
+}
+.list dt {
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #ffffff;
+}
+.list dd {
+  padding: 10px 0;
+  margin-left: 0;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-alert {
+  padding: 4vh 2vw;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 0 0 20px #48c8ff;
+  background: rgba(60, 81, 131, 0.99);
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.news-alert:nth-child(1) {
+  margin-bottom: 2vh;
+}
+
+.alert-message {
+  position: fixed;
+  z-index: 999;
+  bottom: 1%;
+  right: 2%;
+}
+.alert-message .top {
+  color: #3def69;
+}
+.alert-message .bottom {
+  color: #f6fc3a;
+}
+
+.modal .message .title {
+  background: rgba(210, 210, 210, 0.6);
+}
+.modal .message .title h4 {
+  font-size: 1em;
+  text-align: center;
+  line-height: 2em;
+  margin-bottom: 6vh;
+}
+.modal .message ul.entrants {
+  list-style-type: none;
+  padding: 0;
+}
+.modal .message ul.entrants li {
+  font-size: 0.8em;
+  line-height: 2em;
+}
+.modal .message ul.entrants li span {
+  color: #6c5656;
+}
+.modal .message p {
+  font-size: 0.8em;
+  line-height: 2em;
+}
+.modal .message p.text-p {
+  font-size: 0.9em;
+}
+.modal .close-modal {
+  padding: 5px 10px;
+  color: #fff;
+  background: #2f1764;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.modal .short-message {
+  margin-top: 2vh;
+  border-top: 1px solid #bcbcbc;
+  padding-top: 3vh;
+}
+
+.news {
+  padding: 6vh 0;
+}
+.news h3 {
+  font-size: 1.15em;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+.news p.align-right {
+  text-align: right;
+}
+.news p {
+  line-height: 2em;
+}
+
+/* Set the scroll margin top on all anchor elements by using .anchor class */
+/* Note: I'm setting plus 2.5em so the element has some breathing room on the top */
+.anchor {
+  scroll-margin-top: calc(90px + 2.5em);
+}
+
+body {
+  background-color: #f8f8f8 !important;
+  font-family: "Noto Sans JP", sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+.bg-kmax {
+  background-color: transparent !important;
+  transition: 0.5s ease-in;
+}
+
+.bg-kmax.scrolled {
+  background: #fff !important;
+}
+
+.small-smph-connect {
+  display: block;
+}
+
+.register {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  z-index: 99999;
+  display: none;
+  text-align: center;
+  padding: 6px 5px;
+  background: #f6ef78;
+  background: linear-gradient(90deg, #78a8f6 0%, #2b32f3 100%);
+  border-radius: 5px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+}
+.register a {
+  color: white;
+  text-decoration: none;
+  padding: 3vh 2vw;
+  border-radius: 10px;
+}
+.register a:hover {
+  font-weight: bold;
+  color: #eeeeee;
+}
+.register p {
+  color: #424242;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bottomMenu {
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+  left: 0;
+  z-index: 99999;
+  color: #fff;
+}
+.bottomMenu .banner-left {
+  background: rgba(21, 96, 172, 0.6);
+}
+.bottomMenu .banner-right {
+  background: rgba(211, 101, 5, 0.6);
+}
+
+.smph_br {
+  display: none;
+}
+
+.confetti-box {
+  padding-top: 6vh;
+  background: url(../images/main-bg1.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-title {
+  padding-top: 4vh;
+}
+.main-title h4 {
+  font-size: 3em;
+  font-weight: bolder;
+  text-align: center;
+  color: #9c0a0a;
+  -webkit-text-stroke: 1px white;
+}
+.main-title h5 {
+  color: #042a6f;
+  text-shadow: 1px 3px 3px #fff;
+  margin: 3vh auto;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding: 5px 10px;
+}
+.main-title h5 span {
+  font-size: 1.5em;
+  padding: 5px 20px;
+  background: #fde715;
+  background: linear-gradient(140deg, #fde715 0%, #ed890a 100%);
+  border: 3px solid white;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+}
+.main-title h2 {
+  line-height: 1.5em;
+}
+.main-title h2 strong {
+  font-size: 1.25em;
+}
+.main-title h2 span {
+  font-size: 0.9em;
+}
+.main-title h2.top {
+  font-weight: bold;
+  margin-bottom: 6vh;
+}
+.main-title h3 {
+  font-size: 3.5em;
+  font-family: "Oswald", sans-serif;
+}
+.main-title h3 span {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 8px;
+  padding-left: 8px;
+}
+
+.sect01 {
+  padding: 8vh 0;
+}
+.sect01 h5 {
+  color: #be3636;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.sect01 .dark {
+  background: #0c1631;
+  padding: 3vh 0;
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  grid-template-columns: max-content auto;
+  grid-template-rows: auto max-content;
+  background-size: cover;
+  color: white;
+}
+.sect01 .dark p {
+  color: #f8f8f8;
+  font-size: 1.25em;
+  text-shadow: 0 0 20px #48c8ff;
+}
+.sect01 .dark #timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48c8ff;
+  text-align: center;
+}
+.sect01 .dark #timer div {
+  display: inline-block;
+  min-width: 90px;
+}
+.sect01 .dark #timer div span {
+  color: #b1cdf1;
+  display: block;
+  font-size: 0.3em;
+  font-weight: 400;
+}
+
+.main {
+  padding: 5vh 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85)), url(../images/main-bg.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+.main .sect02 {
+  padding: 4vh 0;
+}
+.main .sect02 .inner-nav {
+  padding: 0;
+  list-style-type: none;
+}
+.main .sect02 .inner-nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.main .sect02 .heading {
+  color: #0d1a29;
+}
+.main .sect02 .heading hr {
+  border-top: 1px solid #d36505;
+}
+.main .sect02 .heading h2 {
+  color: #d36505;
+  font-size: 2em;
+}
+.main .sect02 .heading h2 span {
+  color: #0d1a29;
+  position: relative;
+}
+.main .sect02 .heading h2 span::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background: linear-gradient(111.3deg, #d36505 9.6%, #0d1a29 93.6%);
+}
+.main .sect02 .heading h3 {
+  margin: 3vh auto;
+  color: #b08407;
+  line-height: 1.5em;
+}
+.main .sect02 .heading h3 span {
+  color: #af0202;
+}
+.main .sect02 .heading h3 span strong {
+  font-size: 1.5em;
+  padding: 0 5px;
+}
+.main .sect02 .heading p.body {
+  color: #0d1a29;
+  line-height: 2em;
+  font-size: 1em;
+}
+.main .sect02 .heading p.body span {
+  font-size: 1.25em;
+  font-weight: 800;
+  color: #d36505;
+}
+.main .sect02 .heading p.body .title {
+  color: #288ddf;
+}
+.main .sect02 .heading .video-area {
+  padding: 4vh 0 0;
+}
+.main .sect02 .heading .video-area video {
+  width: 100% !important;
+  height: auto !important;
+}
+.main .sect03 {
+  padding: 4vh 0;
+}
+.main .sect03 .qualifications {
+  color: #0d1a29;
+}
+.main .sect03 .qualifications hr {
+  border-top: 1px solid #d36505;
+}
+.main .sect03 .qualifications h2 {
+  color: #d36505;
+  font-size: 2em;
+}
+.main .sect03 .qualifications h2 span {
+  color: #0d1a29;
+  position: relative;
+}
+.main .sect03 .qualifications h2 span::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background: linear-gradient(111.3deg, #d36505 9.6%, #0d1a29 93.6%);
+}
+.main .sect03 .qualifications .qualification-list ul {
+  list-style: square;
+  margin: 4vh 0;
+}
+.main .sect03 .qualifications .qualification-list ul li {
+  line-height: 1.5em;
+  font-size: 1.25em;
+  color: #b08407;
+}
+.main .sect03 .qualifications .body ul li {
+  font-size: 0.9em;
+  line-height: 2em;
+}
+.main .sect04 {
+  padding: 4vh 0;
+}
+.main .sect04 .entry {
+  color: #0d1a29;
+}
+.main .sect04 .entry hr {
+  border-top: 1px solid #d36505;
+}
+.main .sect04 .entry h2 {
+  color: #d36505;
+  font-size: 2em;
+}
+.main .sect04 .entry h2 span {
+  color: #0d1a29;
+  position: relative;
+}
+.main .sect04 .entry h2 span::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background: linear-gradient(111.3deg, #d36505 9.6%, #0d1a29 93.6%);
+}
+.main .sect04 .entry .entry-qual ul {
+  list-style-type: none;
+  margin: 4vh 0;
+  padding: 0;
+}
+.main .sect04 .entry .entry-qual ul li {
+  line-height: 1.5em;
+  font-size: 1.25em;
+  color: #b08407;
+}
+.main .sect04 .entry .entry-qual ul li span {
+  font-size: 0.9em;
+}
+.main .sect04 .entry .body ul li {
+  font-size: 0.9em;
+}
+.main .sect05 {
+  padding: 4vh 0;
+  color: #0d1a29;
+}
+.main .sect05 hr {
+  border-top: 1px solid #d36505;
+}
+.main .sect05 h2 {
+  color: #d36505;
+  font-size: 2em;
+}
+.main .sect05 h2 span {
+  color: #0d1a29;
+  position: relative;
+}
+.main .sect05 h2 span::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background: linear-gradient(111.3deg, #d36505 9.6%, #0d1a29 93.6%);
+}
+.main .sect05 .steps-to-enter h3 {
+  font-size: 1.25em;
+  color: #b08407;
+  margin: 4vh auto 2vh;
+  line-height: 2em;
+}
+.main .sect05 .steps-to-enter h3 span {
+  font-size: 2em;
+  font-weight: 400;
+  color: #464646;
+  padding: 0 5px;
+}
+.main .sect05 .steps-to-enter p {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+.main .sect05 .steps h4 {
+  color: red;
+  font-size: 10em;
+}
+.main .sect05 .steps .content {
+  margin-top: 3vh;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+  background: silver;
+  border: 1px solid #b1b1b1;
+  position: relative;
+}
+.main .sect05 .steps .content .steps-title {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  padding: 3px 10px;
+  background: #eb7b07;
+  background: linear-gradient(140deg, #eb7b07 0%, #fde616 66%);
+  transform: rotate(-10deg);
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+.main .sect05 .steps .content .img-area {
+  background: white;
+  padding-top: 20px;
+}
+.main .sect05 .steps .content .img-area img {
+  padding-bottom: 20px;
+}
+.main .sect05 .steps .content .img-area video {
+  width: 100% !important;
+  height: auto !important;
+}
+.main .sect05 .steps .content .text-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .sect05 .steps .content .text-area p {
+  font-size: 0.8em;
+  padding: 20px 10px 10px;
+  margin-bottom: 0;
+}
+.main .sect05 .steps .content .text-area p span {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.main .sect06 {
+  color: #0d1a29;
+}
+.main .sect06 .requirements h2 {
+  color: #d36505;
+  font-size: 2em;
+}
+.main .sect06 .requirements h2 span {
+  color: #0d1a29;
+  position: relative;
+}
+.main .sect06 .requirements h2 span::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background: linear-gradient(111.3deg, #d36505 9.6%, #0d1a29 93.6%);
+}
+.main .sect06 .requirements .requirement-table h3 {
+  font-size: 1.25em;
+  color: #b08407;
+  margin: 4vh auto 2vh;
+  line-height: 2em;
+}
+.main .sect06 .requirements .requirement-table h3 span {
+  font-size: 2em;
+}
+.main .sect06 .requirements .requirement-table .schedule-row,
+.main .sect06 .requirements .requirement-table .req-row {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+}
+.main .sect06 .requirements .requirement-table .schedule-row:nth-child(odd),
+.main .sect06 .requirements .requirement-table .req-row:nth-child(odd) {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+}
+.main .sect06 .requirements .requirement-table .schedule-row:nth-last-child(1),
+.main .sect06 .requirements .requirement-table .req-row:nth-last-child(1) {
+  border-bottom: none;
+}
+.main .sect06 .requirements .requirement-table .schedule-row video,
+.main .sect06 .requirements .requirement-table .req-row video {
+  width: 100% !important;
+  height: auto !important;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .title,
+.main .sect06 .requirements .requirement-table .req-row .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .title h4,
+.main .sect06 .requirements .requirement-table .req-row .title h4 {
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text,
+.main .sect06 .requirements .requirement-table .req-row .text {
+  justify-content: center;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text p,
+.main .sect06 .requirements .requirement-table .req-row .text p {
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text p span,
+.main .sect06 .requirements .requirement-table .req-row .text p span {
+  font-size: 0.9em;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text p span strong,
+.main .sect06 .requirements .requirement-table .req-row .text p span strong {
+  color: #b90707;
+  padding: 0 5px;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text p em,
+.main .sect06 .requirements .requirement-table .req-row .text p em {
+  font-style: normal;
+  font-size: 0.9em;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text p .small,
+.main .sect06 .requirements .requirement-table .req-row .text p .small {
+  font-size: 0.8em;
+  padding-top: 10px;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text ul,
+.main .sect06 .requirements .requirement-table .req-row .text ul {
+  margin-top: 10px;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text ul li,
+.main .sect06 .requirements .requirement-table .req-row .text ul li {
+  font-size: 0.8em;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text ul li span,
+.main .sect06 .requirements .requirement-table .req-row .text ul li span {
+  font-weight: bold;
+  color: #b90707;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .text ul li span em,
+.main .sect06 .requirements .requirement-table .req-row .text ul li span em {
+  font-style: normal;
+  color: blue;
+  font-size: 0.8em;
+  padding: 0 3px 0 5px;
+}
+
+.footer {
+  background-color: #d9d9d9;
+  padding: 2vh 0 8vh;
+}
+.footer .container .links {
+  text-align: center;
+  margin-bottom: 2vh;
+}
+.footer .container .links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.footer .container .links ul li {
+  font-size: 0.7em;
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 5px;
+  border-right: 1px solid #0d1a29;
+}
+.footer .container .links ul li a {
+  color: #0d1a29;
+  text-decoration: none;
+}
+.footer .container .links ul li:nth-last-child(1) {
+  border-right: none;
+  padding-right: 0;
+}
+.footer .container h1 {
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+.footer .container p {
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .sect06 .requirements .requirement-table .schedule-row,
+.sect06 .requirements .requirement-table .req-row {
+    border-bottom: none !important;
+  }
+  .sect06 .requirements .requirement-table .schedule-row:nth-child(odd),
+.sect06 .requirements .requirement-table .req-row:nth-child(odd) {
+    border-bottom: none;
+  }
+  .sect06 .requirements .requirement-table .schedule-row:nth-last-child(1),
+.sect06 .requirements .requirement-table .req-row:nth-last-child(1) {
+    border-bottom: none;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .title,
+.sect06 .requirements .requirement-table .req-row .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #020024;
+    background: linear-gradient(140deg, #020024 0%, #1560ac 62%);
+  }
+  .sect06 .requirements .requirement-table .schedule-row .title h4,
+.sect06 .requirements .requirement-table .req-row .title h4 {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 1vh 0;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .text,
+.sect06 .requirements .requirement-table .req-row .text {
+    justify-content: center;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .text p,
+.sect06 .requirements .requirement-table .req-row .text p {
+    margin-bottom: 0;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .text p span,
+.sect06 .requirements .requirement-table .req-row .text p span {
+    font-size: 0.9em;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .text p span strong,
+.sect06 .requirements .requirement-table .req-row .text p span strong {
+    color: #b90707;
+    padding: 0 5px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mobile-break {
+    display: block;
+  }
+
+  .smph_br {
+    display: block;
+  }
+
+  .br_on {
+    display: block;
+  }
+
+  .main-title h4 {
+    font-size: 2.5em;
+  }
+
+  .alert-message {
+    left: 2%;
+  }
+
+  .main {
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85)), url(../images/main-bg-phone.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+  }
+  .main .sect05 .steps .content {
+    margin-top: 0;
+  }
+  .main .sect05 .steps .content .text-area p {
+    padding: 10px 3px;
+  }
+  .main .sect06 .requirements .requirement-table h3 {
+    font-size: 1.5em;
+    color: #b08407;
+    margin: 4vh auto 2vh;
+    line-height: 2em;
+    font-weight: bold;
+  }
+  .main .sect06 .requirements .requirement-table h3 span {
+    font-size: 2em;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row,
+.main .sect06 .requirements .requirement-table .req-row {
+    border-bottom: none !important;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row:nth-child(odd),
+.main .sect06 .requirements .requirement-table .req-row:nth-child(odd) {
+    border-bottom: none;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row:nth-last-child(1),
+.main .sect06 .requirements .requirement-table .req-row:nth-last-child(1) {
+    border-bottom: none;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .title,
+.main .sect06 .requirements .requirement-table .req-row .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #020024;
+    background: linear-gradient(140deg, #020024 0%, #1560ac 62%);
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .title h4,
+.main .sect06 .requirements .requirement-table .req-row .title h4 {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 1vh 0;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .text,
+.main .sect06 .requirements .requirement-table .req-row .text {
+    justify-content: center;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .text p,
+.main .sect06 .requirements .requirement-table .req-row .text p {
+    margin-bottom: 0;
+    font-size: 1.1em;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .text p span,
+.main .sect06 .requirements .requirement-table .req-row .text p span {
+    font-size: 1em;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .text p span strong,
+.main .sect06 .requirements .requirement-table .req-row .text p span strong {
+    color: #b90707;
+    padding: 0 5px;
+  }
+}
+@media screen and (max-width: 446px) {
+  .sect01 .dark #timer {
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 428px) {
+  .main-title h2 strong {
+    font-size: 1em;
+  }
+  .main-title h2.top {
+    font-size: 1.5em;
+  }
+
+  .small-smph-connect {
+    display: none;
+  }
+
+  .main .sect05 .steps-to-enter h3 {
+    font-size: 1.25em;
+  }
+  .main .sect05 .steps-to-enter h3 span {
+    font-size: 1.5em;
+    padding: 0 3px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .main-title h2.top {
+    font-size: 1.3em;
+  }
+  .main-title h4 {
+    font-size: 2.25em;
+  }
+  .main-title h5 span {
+    font-size: 1.25em;
+  }
+
+  .sect05 .steps-to-enter h3 {
+    font-size: 1em;
+  }
+  .sect05 .steps-to-enter h3 span {
+    font-size: 1.5em;
+    padding: 0 3px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main-title h4 {
+    font-size: 2em;
+  }
+  .main-title h2 {
+    font-size: 1.4em;
+  }
+  .main-title h2.top {
+    font-size: 1.2em;
+  }
+
+  .main .sect02 .heading p.body {
+    font-size: 0.9em;
+  }
+  .main .sect03 .qualifications .qualification-list ul li {
+    font-size: 1em;
+  }
+  .main .sect04 .entry .entry-qual ul li {
+    font-size: 1em;
+  }
+  .main .sect05 .steps-to-enter h3 {
+    font-size: 1em;
+  }
+  .main .sect05 .steps-to-enter h3 span {
+    font-size: 1.5em;
+    padding: 0 3px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .modal .message h4 {
+    font-size: 1.25em;
+    text-align: center;
+  }
+  .modal .message ul.entrants {
+    list-style-type: none;
+    padding: 0;
+  }
+  .modal .message ul.entrants li {
+    font-size: 0.8em;
+  }
+  .modal .message p {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 385px) {
+  .modal .message h4 {
+    font-size: 1.25em;
+    text-align: center;
+  }
+  .modal .message ul.entrants {
+    list-style-type: none;
+    padding: 0;
+  }
+  .modal .message ul.entrants li {
+    font-size: 0.7em;
+  }
+  .modal .message p {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 378px) {
+  .main-title h2 {
+    font-size: 1.25em;
+  }
+
+  .sect01 .dark #timer {
+    font-size: 2em;
+  }
+  .sect01 .dark #timer div {
+    min-width: 70px;
+  }
+
+  .main .sect03 .qualifications .qualification-list ul li {
+    font-size: 1em;
+  }
+  .main .sect04 .entry .entry-qual ul li {
+    font-size: 1em;
+  }
+  .main .sect04 .entry .entry-qual ul li span {
+    font-size: 0.9em;
+  }
+  .main .sect05 .steps-to-enter h3 {
+    font-size: 1em;
+  }
+
+  .footer .container .links ul li {
+    display: block;
+    border-right: none;
+    line-height: 2em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
