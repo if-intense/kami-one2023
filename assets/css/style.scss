@@ -198,9 +198,9 @@ body {
   z-index:99999;
   display: none;
   text-align: center;
-  padding: 6px 5px;
+  padding: 10px 5px;
   background: rgb(246,239,120);
-  background: linear-gradient(90deg, rgb(120, 168, 246) 0%, rgb(43, 50, 243) 100%);
+  background: linear-gradient(90deg, rgb(219,86,20) 0%, rgb(191,42,23) 100%);
   border-radius: 5px;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
   a {
@@ -751,6 +751,18 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                         }
                     }
                 }
+                .schedule-row {
+                    .stylist {
+                        text-align: center;
+                        h5 {
+                            font-size: 7px;
+                            margin-bottom: 0;
+                        }
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -815,9 +827,10 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        background: rgb(2, 0, 36);
+                        background: rgb(236, 108, 14);
                         // padding:2vh 0;
-                        background: linear-gradient(140deg, rgba(2, 0, 36, 1) 0%, rgba(21, 96, 172, 1) 62%);
+                        
+                        background: linear-gradient(140deg, rgba(236, 108, 14, 1) 0%, rgba(192, 43, 24, 1) 62%);
                         h4 {
                             font-size: 1em;
                             text-align: center;
@@ -913,9 +926,9 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            background: rgb(2, 0, 36);
+                            // background: rgb(2, 0, 36);
                             // padding:2vh 0;
-                            background: linear-gradient(140deg, rgba(2, 0, 36, 1) 0%, rgba(21, 96, 172, 1) 62%);
+                            // background: linear-gradient(140deg, rgba(2, 0, 36, 1) 0%, rgba(21, 96, 172, 1) 62%);
                             h4 {
                                 font-size: 1em;
                                 text-align: center;
@@ -941,6 +954,7 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                             }
                         }
                     }
+                    
                 }
             }
         }

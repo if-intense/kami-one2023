@@ -179,9 +179,9 @@ body {
   z-index: 99999;
   display: none;
   text-align: center;
-  padding: 6px 5px;
+  padding: 10px 5px;
   background: #f6ef78;
-  background: linear-gradient(90deg, #78a8f6 0%, #2b32f3 100%);
+  background: linear-gradient(90deg, #db5614 0%, #bf2a17 100%);
   border-radius: 5px;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
 }
@@ -676,6 +676,16 @@ body {
   font-size: 0.8em;
   padding: 0 3px 0 5px;
 }
+.main .sect06 .requirements .requirement-table .schedule-row .stylist {
+  text-align: center;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .stylist h5 {
+  font-size: 7px;
+  margin-bottom: 0;
+}
+.main .sect06 .requirements .requirement-table .schedule-row .stylist p {
+  font-size: 10px;
+}
 
 .footer {
   background-color: #d9d9d9;
@@ -734,8 +744,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #020024;
-    background: linear-gradient(140deg, #020024 0%, #1560ac 62%);
+    background: #ec6c0e;
+    background: linear-gradient(140deg, #ec6c0e 0%, #c02b18 62%);
   }
   .sect06 .requirements .requirement-table .schedule-row .title h4,
 .sect06 .requirements .requirement-table .req-row .title h4 {
@@ -824,8 +834,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #020024;
-    background: linear-gradient(140deg, #020024 0%, #1560ac 62%);
   }
   .main .sect06 .requirements .requirement-table .schedule-row .title h4,
 .main .sect06 .requirements .requirement-table .req-row .title h4 {
