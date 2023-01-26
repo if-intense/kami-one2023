@@ -680,11 +680,23 @@ body {
   text-align: center;
 }
 .main .sect06 .requirements .requirement-table .schedule-row .stylist h5 {
-  font-size: 7px;
+  font-size: 6px;
   margin-bottom: 0;
 }
 .main .sect06 .requirements .requirement-table .schedule-row .stylist p {
-  font-size: 10px;
+  font-size: 8px;
+}
+.main .sect06 .requirements .requirement-table .req-row .notice {
+  border: 1px dashed rgba(50, 50, 50, 0.8);
+  padding: 10px;
+  margin: 2vh auto;
+}
+.main .sect06 .requirements .requirement-table .req-row .notice p {
+  margin-top: 0;
+  padding-top: 0;
+}
+.main .sect06 .requirements .requirement-table .req-row .other {
+  border: 1px solid rgba(0, 0, 255, 0.7);
 }
 
 .footer {
@@ -772,6 +784,16 @@ body {
 .sect06 .requirements .requirement-table .req-row .text p span strong {
     color: #b90707;
     padding: 0 5px;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .stylist {
+    text-align: center;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .stylist h5 {
+    font-size: 6px;
+    margin-bottom: 0;
+  }
+  .sect06 .requirements .requirement-table .schedule-row .stylist p {
+    font-size: 8px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -861,6 +883,16 @@ body {
 .main .sect06 .requirements .requirement-table .req-row .text p span strong {
     color: #b90707;
     padding: 0 5px;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .stylist {
+    text-align: center;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .stylist h5 {
+    font-size: 7px;
+    margin-bottom: 0;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .stylist p {
+    font-size: 8px;
   }
 }
 @media screen and (max-width: 446px) {
@@ -965,6 +997,17 @@ body {
   }
   .modal .message p {
     font-size: 0.7em;
+  }
+
+  .main .sect06 .requirements .requirement-table .schedule-row .stylist {
+    text-align: center;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .stylist h5 {
+    font-size: 6px;
+    margin-bottom: 0;
+  }
+  .main .sect06 .requirements .requirement-table .schedule-row .stylist p {
+    font-size: 8px;
   }
 }
 @media screen and (max-width: 378px) {

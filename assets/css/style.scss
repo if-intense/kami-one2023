@@ -21,6 +21,7 @@ $kamisma-gold: rgb(176, 132, 7);
 }
 
 
+
 .header {
     width:100%;
     max-width:720px;
@@ -751,16 +752,32 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                         }
                     }
                 }
+                
                 .schedule-row {
                     .stylist {
                         text-align: center;
                         h5 {
-                            font-size: 7px;
+                            font-size: 6px;
                             margin-bottom: 0;
                         }
                         p {
-                            font-size: 10px;
+                            font-size: 8px;
                         }
+                    }
+                }
+                .req-row {
+                    .notice {
+                        border: 1px dashed rgba(50,50,50,0.8);
+                        padding: 10px;
+                        margin:2vh auto;
+                        p {
+                            margin-top: 0;
+                            padding-top: 0;
+                        }
+                    }
+                    
+                    .other {
+                        border: 1px solid rgba(0,0,255,0.7);
                     }
                 }
             }
@@ -852,6 +869,18 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                                     padding: 0 5px;
                                 }
                             }
+                        }
+                    }
+                }
+                .schedule-row {
+                    .stylist {
+                        text-align: center;
+                        h5 {
+                            font-size: 6px;
+                            margin-bottom: 0;
+                        }
+                        p {
+                            font-size: 8px;
                         }
                     }
                 }
@@ -951,6 +980,18 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
                                         padding: 0 5px;
                                     }
                                 }
+                            }
+                        }
+                    }
+                    .schedule-row {
+                        .stylist {
+                            text-align: center;
+                            h5 {
+                                font-size: 7px;
+                                margin-bottom: 0;
+                            }
+                            p {
+                                font-size: 8px;
                             }
                         }
                     }
@@ -1139,6 +1180,28 @@ background: linear-gradient(140deg, rgba(253,231,21,1) 0%, rgba(237,137,10,1) 10
         p {
             font-size: 0.7em;
             // line-height: 2em;
+        }
+    }
+}
+
+.main {
+    .sect06 {
+        .requirements {
+            .requirement-table {               
+                .schedule-row {
+                    .stylist {
+                        text-align: center;
+                        h5 {
+                            font-size: 6px;
+                            margin-bottom: 0;
+                        }
+                        p {
+                            font-size: 8px;
+                        }
+                    }
+                }
+                
+            }
         }
     }
 }
