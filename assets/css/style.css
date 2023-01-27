@@ -224,10 +224,7 @@ body {
 }
 
 .confetti-box {
-  padding-top: 6vh;
-  background: url(../images/main-bg1.png) no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: #dfad38;
 }
 
 .main-title {
